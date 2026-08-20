@@ -1,0 +1,514 @@
+/* =========================================================
+   STUDENT PROGRESS MONITORING SYSTEM
+   Professional Teacher Dashboard
+   ========================================================= */
+
+:root {
+    --primary: #008f5a;
+    --primary-dark: #007a4d;
+    --primary-light: #e8f7f0;
+
+    --blue: #0d6efd;
+    --blue-light: #eaf2ff;
+
+    --text-dark: #1f2937;
+    --text-muted: #6b7280;
+
+    --background: #f5f7fa;
+    --white: #ffffff;
+
+    --border: #e5e7eb;
+
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================
+   GENERAL
+   ========================= */
+
+body {
+    background: var(--background);
+    color: var(--text-dark);
+
+    font-family:
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    background: var(--primary) !important;
+
+    min-height: 64px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.navbar-brand {
+    font-size: 20px;
+    font-weight: 700;
+
+    color: white !important;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.navbar .text-white {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar .btn {
+    border-radius: 7px;
+    padding: 7px 15px;
+}
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    max-width: 1250px;
+}
+
+/* =========================
+   PAGE TITLE
+   ========================= */
+
+.dashboard-title {
+    font-size: 30px;
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    margin-bottom: 4px;
+}
+
+.dashboard-subtitle {
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card {
+    border: 1px solid var(--border) !important;
+
+    border-radius: 10px !important;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   TOTAL STUDENTS CARD
+   ========================= */
+
+.stat-card {
+    min-height: 235px;
+
+    display: flex;
+    align-items: center;
+}
+
+.stat-card .card-body {
+    width: 100%;
+}
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 24px;
+
+    margin-bottom: 18px;
+}
+
+.stat-label {
+    color: var(--text-muted);
+
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 3px;
+}
+
+.stat-number {
+    font-size: 36px;
+
+    font-weight: 700;
+
+    color: var(--text-dark);
+
+    line-height: 1.1;
+}
+
+.stat-description {
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+/* =========================
+   CARD HEADER
+   ========================= */
+
+.section-header {
+    padding: 16px 20px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: white;
+}
+
+.section-title {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin: 0;
+
+    color: var(--text-dark);
+}
+
+.section-subtitle {
+    font-size: 12px;
+
+    color: var(--text-muted);
+
+    margin: 2px 0 0;
+}
+
+/* =========================
+   LEADERBOARD
+   ========================= */
+
+.leaderboard-table {
+    margin-bottom: 0;
+}
+
+.leaderboard-table thead th {
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--border);
+
+    padding: 12px 14px;
+}
+
+.leaderboard-table tbody td {
+    padding: 13px 14px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+}
+
+.leaderboard-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.rank-number {
+    width: 30px;
+    height: 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f1f5f9;
+
+    font-weight: 700;
+
+    font-size: 12px;
+}
+
+.student-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-weight: 700;
+
+    margin-right: 9px;
+}
+
+.student-name {
+    font-weight: 600;
+
+    color: var(--text-dark);
+}
+
+.student-role {
+    display: block;
+
+    font-size: 11px;
+
+    color: var(--text-muted);
+}
+
+.coins {
+    color: #e66a00;
+
+    font-weight: 700;
+}
+
+/* =========================
+   SEARCH AREA
+   ========================= */
+
+.search-card {
+    margin-top: 20px;
+}
+
+.search-body {
+    padding: 20px;
+}
+
+.form-label-custom {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    color: #64748b;
+
+    margin-bottom: 6px;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #d7dee7;
+
+    border-radius: 7px;
+
+    min-height: 42px;
+
+    font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.10);
+}
+
+.btn-search {
+    min-height: 42px;
+
+    background: var(--blue);
+
+    border: none;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-weight: 600;
+
+    width: 100%;
+}
+
+.btn-search:hover {
+    background: #0b5ed7;
+
+    color: white;
+}
+
+/* =========================
+   STUDENT LIST
+   ========================= */
+
+.student-list {
+    margin-top: 20px;
+}
+
+.student-table {
+    margin-bottom: 0;
+}
+
+.student-table thead th {
+    background: #f8fafc;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    font-weight: 700;
+
+    padding: 13px 14px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.student-table tbody td {
+    padding: 14px;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.student-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.student-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================
+   GRADE BADGE
+   ========================= */
+
+.grade-badge {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 6px;
+
+    background: var(--blue-light);
+
+    color: var(--blue);
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+/* =========================
+   VIEW PROGRESS BUTTON
+   ========================= */
+
+.btn-progress {
+    background: var(--blue);
+
+    border: none;
+
+    color: white;
+
+    border-radius: 6px;
+
+    padding: 7px 13px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.btn-progress:hover {
+    background: #0b5ed7;
+
+    color: white;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer {
+    padding: 25px 0;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .dashboard-title {
+        font-size: 25px;
+    }
+
+    .stat-card {
+        min-height: 180px;
+    }
+
+    .student-table {
+        min-width: 800px;
+    }
+
+    .student-list {
+        overflow-x: auto;
+    }
+
+}
